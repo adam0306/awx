@@ -1,6 +1,10 @@
 ---
-- hosts: all
-
+- name: Windows Updates
+  hosts: all
+  become: false
+  gather_facts: no
+  tasks:
+  
   become: true
   tasks:
     - name: Updates

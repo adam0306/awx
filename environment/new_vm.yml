@@ -1,3 +1,10 @@
+---
+- name: Windows Updates
+  hosts: all
+  become: false
+  gather_facts: no
+  tasks:
+
 # Create new container with minimal options
 - proxmox:
     vmid: 100
