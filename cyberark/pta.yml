@@ -1,0 +1,24 @@
+---
+- name: PTA Packages
+  hosts: all
+  gather_facts: no
+  tasks:
+
+    - name: Install required packages
+      dnf:
+        name:
+          - ncurses-compat-libs
+          - python36
+          - iptables-services
+          - rsync
+          - net-tools
+          - bind-utils
+          - cyrus-sasl
+          - cyrus-sasl-gssapi
+          - cyrus-sasl-plain
+          - tmpwatch
+          - sshpass
+          - libnsl
+          - tar
+          - unzip
+        state: latest
