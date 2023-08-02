@@ -12,6 +12,6 @@
   #        - CriticalUpdates
   #        - UpdateRollups
 
-- name: Search and download Windows updates without installing them
-  win_updates:
-    state: downloaded
+  - name: Search and download Windows updates without installing them
+    win_updates:
+      state: downloaded
