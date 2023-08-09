@@ -9,6 +9,6 @@
     ansible.builtin.package:
       name:
         - git
-        - docker-compose
-        - docker.io
+        #- docker-compose
+        #- docker.io
       state: present
