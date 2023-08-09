@@ -1,14 +1,21 @@
 ---
-- name: PTA Packages
+- name: Conjur Hosts
   hosts: all
   gather_facts: no
   become: yes
   tasks:
 
-  - name: Install package foo
+  - name: Add Docker repository
+    ansible.builtin.yum_repository:
+      name: docker
+      description: Docker YUM repo
+      baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+
+  - name: Install required packages
     ansible.builtin.package:
       name:
         - git
+        - yum-utils
         #- docker-compose
         #- docker.io
-      state: present
+      state: latest
