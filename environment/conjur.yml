@@ -1,0 +1,10 @@
+---
+- name: PTA Packages
+  hosts: all
+  gather_facts: no
+  tasks:
+
+  - name: Install package foo
+    apt_rpm:
+      pkg: git
+      state: present
