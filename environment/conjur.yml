@@ -16,6 +16,9 @@
       name:
         - git
         - yum-utils
-        #- docker-compose
+        - docker-compose
         #- docker.io
+        #- docker-ce
+        #- docker-ce-cli
+        #- containerd.io
       state: latest
