@@ -5,6 +5,9 @@
   tasks:
 
   - name: Install package foo
-    apt_rpm:
-      pkg: git
+    ansible.builtin.package:
+      name:
+        - git
+        - docker-compose
+        - docker.io
       state: present
