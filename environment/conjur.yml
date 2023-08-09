@@ -2,6 +2,7 @@
 - name: PTA Packages
   hosts: all
   gather_facts: no
+  become: yes
   tasks:
 
   - name: Install package foo
