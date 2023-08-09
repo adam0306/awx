@@ -5,11 +5,16 @@
   become: yes
   tasks:
 
-  - name: Add Docker repository
-    ansible.builtin.yum_repository:
-      name: docker
-      description: Docker YUM repo
-      baseurl: https://download.docker.com/linux/centos/docker-ce.repo
+  - name: Import a key from a url
+    ansible.builtin.rpm_key:
+      state: present
+      key: https://download.docker.com/linux/ubuntu/gpg
+
+  - name: Add repository
+  ansible.builtin.yum_repository:
+    name: epel
+    description: EPEL YUM repo
+    baseurl: https://download.docker.com/linux/rhel/
 
   - name: Install required packages
     ansible.builtin.package:
