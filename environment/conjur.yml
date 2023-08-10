@@ -16,14 +16,14 @@
   #   description: EPEL YUM repo
   #   baseurl: https://download.docker.com/linux/rhel/
 
-  - name: Package Install
-     ansible.builtin.package:
-       name:
-         - git
-         - yum-utils
-         - docker-compose
-         #- docker.io
-         #- docker-ce
-         #- docker-ce-cli
-         #- containerd.io
-       state: latest
+  # - name: Package Install
+  #    ansible.builtin.package:
+  #      name:
+  #        - git
+  #        - yum-utils
+  #        - docker-compose
+  #        #- docker.io
+  #        #- docker-ce
+  #        #- docker-ce-cli
+  #        #- containerd.io
+  #      state: latest
