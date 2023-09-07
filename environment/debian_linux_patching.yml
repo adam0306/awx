@@ -1,0 +1,11 @@
+---
+- name: linux_patching
+  hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+
+    - name: Upgrade all packages
+      ansible.builtin.apt:
+        name: '*'
+        state: latest
