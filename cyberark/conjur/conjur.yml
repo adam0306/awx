@@ -5,6 +5,28 @@
   become: yes
   tasks:
 
+
+
+  Add GPG key for Docker
+  Add Docker Repo
+  Update Packages
+  Install Packages
+    - git
+    - curl
+    - docker.io
+    - docker-compose
+  Build file structure
+  Copy in Conjur appliance
+  Build seccomp.json
+  Build Conjur image
+  AWS KMS key
+  Deploy Conjur container
+  Configure Conjur container roles
+  
+
+
+  
+
   - name: Import a key from a url
     ansible.builtin.rpm_key:
       state: present
