@@ -1,0 +1,13 @@
+---
+- name: Install CyberArk AIM agent, Test RedHat
+  hosts: all
+  become: true
+  gather_facts: no
+  tasks:
+
+  - name: Another way to call known_hosts
+    known_hosts:
+      name: host1.example.com   # or 10.9.8.77
+      key: {{ hostname }}
+      path: /home/user/.ssh/known_hosts
+      state: present
