@@ -1,17 +1,16 @@
 ---
 - name: linux_patching
-  hosts: all
-  become: true
+  hosts: localhost
   gather_facts: no
   tasks:
-
-    - name: Get the cert from an RDP port
-      community.crypto.get_certificate:
-        host: "1.2.3.4"
-        port: 3389
-      delegate_to: localhost
-      run_once: true
-      register: cert
+# 
+    # - name: Get the cert from an RDP port
+      # community.crypto.get_certificate:
+        # host: "1.2.3.4"
+        # port: 3389
+      # delegate_to: localhost
+      # run_once: true
+      # register: cert
     
     - name: Get a cert from an https port
       community.crypto.get_certificate:
@@ -25,4 +24,4 @@
       ansible.builtin.debug:
         msg: "cert expires in: {{ expire_days }} days."
       vars:
-        expire_days: "{{ (( cert.not_after | to_datetime('%Y%m%d%H%M%SZ')) - (ansible_date_time.iso8601 | to_datetime('%Y-%m-%dT%H:%M:%SZ')) ).days }}"
+        expire_days: "{{ cert.not_after | to_datetime('%Y%m%d%H%M%SZ') "}} #{{ cert.not_after | to_datetime }}" "{{ (( cert.not_after | to_datetime(iso8601format)) - (ansible_date_time.iso8601)).days }}"
